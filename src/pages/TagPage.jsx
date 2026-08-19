@@ -11,7 +11,7 @@ const TagPage = () => {
     return (
         <div className="flex flex-col h-full w-11/12 max-w-300 justify-center items-center m-3 gap-y-3 pt-18 -mb-10">
             {/* back - heading */}
-            <div className="flex w-full justify-between items-start border-b border-slate-700 font-label p-4">
+            <div className="flex flex-col sm:flex-row w-full justify-between items-center border-b border-slate-700 font-label p-4">
                 <button 
                     className="flex items-center justify-center gap-x-2 px-3 py-1.5 border border-slate-900 rounded-md hover:scale-103 transition-all 600ms cursor-pointer"
                     onClick={() => navigate(-1)}
@@ -19,7 +19,9 @@ const TagPage = () => {
                     <span><IoIosArrowRoundBack/></span>
                     <span>Back</span>
                 </button>
-                <h2 className="font-body font-semibold text-on-surface text-3xl cursor-pointer">Blogs Tagged <span className="font-label text-blue-800">#{id}</span></h2>
+                <h2 className="font-body font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer">
+                Blogs Tagged <span className="font-label text-blue-800">#{id}</span>
+                </h2>
             </div>
 
             {/* Blogs */}

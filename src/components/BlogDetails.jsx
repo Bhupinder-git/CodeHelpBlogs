@@ -11,15 +11,15 @@ const BlogDetails = ({ title, author, date, category, tags, content, id }) => {
           {category}
         </NavLink>
       </div>
-      <div className="flex min-w-0 flex-1 flex-col items-start justify-center gap-1 overflow-hidden font-body md:gap-2">
+      <div className="flex w-0 min-w-0 flex-1 flex-col items-start justify-center gap-1 font-body md:gap-2">
         {/* title - author - date */}
-        <div className="min-w-0 max-w-full">
+        <div className="w-full min-w-0 max-w-full wrap-anywhere">
           <NavLink to={`/blogs/${id}`}>
-            <h2 className="break-words font-headline text-base font-bold text-slate-900 dark:text-slate-100 md:text-xl">
+            <h2 className="wrap-anywhere font-headline text-base font-bold text-slate-900 dark:text-slate-100 md:text-xl">
               {title}
             </h2>
           </NavLink>
-          <p className="break-words text-sm md:text-base">
+          <p className="wrap-anywhere text-sm md:text-base">
             {" "}
             By
             <span className="italic"> {author} </span>
@@ -31,21 +31,24 @@ const BlogDetails = ({ title, author, date, category, tags, content, id }) => {
               </span>
             </NavLink>
           </p>
-          <p className="break-words text-sm md:text-base">
+          <p className="wrap-anywhere text-sm md:text-base">
             Posted On <span>{date}</span>
           </p>
         </div>
 
         {/* content - tags */}
-        <div className="flex min-w-0 flex-col gap-y-2 md:gap-y-3">
-          <p className="break-words text-sm md:text-base">{content}</p>
-          <div className="max-w-full break-words">
+        <div className="flex w-full min-w-0 flex-col gap-y-2 md:gap-y-3">
+          <p className="wrap-anywhere text-sm md:text-base">{content}</p>
+          <div className="flex w-full min-w-0 max-w-full flex-wrap gap-x-2 gap-y-1">
             {tags.map((tag, idx) => (
               <span
-                className="font-label mx-1 text-sm text-blue-800 hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 md:mx-2 md:text-base"
+                className="font-label max-w-full break-all text-sm text-blue-800 hover:text-blue-900 dark:text-blue-300 dark:hover:text-blue-200 md:text-base"
                 key={idx}
               >
-                <NavLink to={`/tags/${tag.replaceAll(" ", "-")}`}>
+                <NavLink
+                  className="max-w-full break-all"
+                  to={`/tags/${tag.replaceAll(" ", "-")}`}
+                >
                   #{tag}
                 </NavLink>
               </span>
