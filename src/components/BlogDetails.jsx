@@ -24,7 +24,7 @@ const BlogDetails = ({ title, author, date, category, tags, content, id }) => {
             By
             <span className="italic"> {author} </span>
             On
-            <NavLink to={`/category${category.replaceAll(" ", "-")}`}>
+            <NavLink to={`/category/${category.replaceAll(" ", "-")}`}>
               <span className="font-label text-xs font-semibold md:text-[15px]">
                 {" "}
                 {category}
